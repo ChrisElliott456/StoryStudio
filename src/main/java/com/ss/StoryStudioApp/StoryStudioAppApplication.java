@@ -97,7 +97,8 @@ public class StoryStudioAppApplication implements CommandLineRunner {
 				.findAll().forEach(book -> logger.info(book.getTitle()+" "+book.getAuthor()));
 		profileRepository.findAll().forEach(profile -> logger.info(profile.getProfileName()));
 
-		//userRepository.save(new User("user", ))
+		userRepository.save(new User("user", "$2y$10$A2DqILnGa7E8/f1bIdr8puZ6sNniXY0XPaBItIhFJbK8n6aqfZI6W", "USER"));
+		userRepository.save(new User("admin", "$2y$10$fEMaHt.FUW3OzzfjxT.qleZk6gLJMq0awZeTmq2p8SRy7Qp0LzJAe", "ADMIN"));
 	}
 
 
