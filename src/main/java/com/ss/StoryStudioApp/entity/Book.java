@@ -2,27 +2,25 @@ package com.ss.StoryStudioApp.entity;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
-public class Movie {
+public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "movie_id")
+    @Column(name = "book_id")
     private Long id;
     private String title;
-    private String director;
+    private String author;
     private int year;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile")
     private Profile profile;
 
-    public Movie() {
+    public Book() {
     }
 
-    public Movie(String title, String director, int year, Profile profile) {
+    public Book(String title, String author, int year, Profile profile) {
         this.title = title;
-        this.director = director;
+        this.author = author;
         this.year = year;
         this.profile = profile;
     }
@@ -43,12 +41,12 @@ public class Movie {
         this.title = title;
     }
 
-    public String getDirector() {
-        return director;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setDirector(String director) {
-        this.director = director;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public int getYear() {
