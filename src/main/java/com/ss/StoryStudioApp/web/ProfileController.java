@@ -18,7 +18,7 @@ public class ProfileController {
     }
     @GetMapping("/profiles")
     public ResponseEntity<List<Profile>> getProfiles(@PathVariable Long id){
-        return new ResponseEntity<List<Profile>>(profileService.getProfiles(id), HttpStatus.OK);
+        return new ResponseEntity<>(profileService.getProfiles(id), HttpStatus.OK);
     }
     @GetMapping("/{id}")
     public ResponseEntity<Profile> getProfileById(@PathVariable Long id){
